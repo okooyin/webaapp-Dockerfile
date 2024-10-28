@@ -1,0 +1,7 @@
+FROM jboss/wildflycd 
+ADD target/war* /opt/jboss/wildfly/standalone/deployments/
+
+FROM tomcat:8.0.20-Jre8
+COPY target/*war /usr/local/cat/webapps/app.war 
+
+
